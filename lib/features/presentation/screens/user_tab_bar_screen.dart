@@ -57,7 +57,7 @@ class _UserTabBarScreenState extends State<UserTabBarScreen> {
         },
         builder: (context, state) {
           if (state is UserLoadingState) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -69,7 +69,7 @@ class _UserTabBarScreenState extends State<UserTabBarScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Column(
                   children: [
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Image.network(
                       userModel.results?.first.picture?.large ?? '',
                       width: 200,
@@ -78,10 +78,10 @@ class _UserTabBarScreenState extends State<UserTabBarScreen> {
                       "${userModel.results?.first.name?.first} ${userModel.results?.first.name?.last}",
                       style: TextHelper.w600s14,
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     TabBar(
                       labelStyle: TextHelper.w600s14,
-                      tabs: [
+                      tabs: const [
                         Tab(text: 'Main info'),
                         Tab(text: 'Location'),
                         Tab(text: 'Email'),
@@ -103,7 +103,7 @@ class _UserTabBarScreenState extends State<UserTabBarScreen> {
                       onPressed: () {
                         userBloc.add(GetUserDetailInfoEvent());
                       },
-                      child: Text('Поиск'),
+                      child: const Text('Поиск'),
                     )
                   ],
                 ),
@@ -116,7 +116,7 @@ class _UserTabBarScreenState extends State<UserTabBarScreen> {
                 onPressed: () {
                   userBloc.add(GetUserDetailInfoEvent());
                 },
-                child: Text("повторить")),
+                child: const Text("повторить")),
           );
         },
       ),

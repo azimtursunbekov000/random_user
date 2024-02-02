@@ -1,6 +1,8 @@
 import 'dart:developer';
 
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 import 'package:tab_bar/features/data/models/user_model.dart';
 import 'package:tab_bar/features/domain/use_cases/user_use_case.dart';
@@ -20,7 +22,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
         emit(UserLoadedState(userModel: userModel));
       } catch (e) {
-        print('$e');
+        log('$e');
         log("ERROR =======================");
         emit(UserErrorState(error: CatchException.convertException(e)));
       }

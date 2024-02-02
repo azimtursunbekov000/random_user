@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:dio/dio.dart';
 
 class CatchException {
@@ -7,6 +9,7 @@ class CatchException {
 
   static CatchException convertException(dynamic error) {
     if (error is DioException) {
+      // ignore:
       print(error);
       if (error.type == DioExceptionType.connectionTimeout) {
         print('CONNECTION_ERROR');

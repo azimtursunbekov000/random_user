@@ -11,7 +11,7 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<UserModel> getUserDetailInfo() async {
     try {
-      Response response = await apiRequester.toGet('${apiRequester.url}');
+      Response response = await apiRequester.toGet(apiRequester.url);
 
       log('getUserDetailInfo result == ${response.data}');
 
@@ -20,7 +20,7 @@ class UserRepositoryImpl implements UserRepository {
       }
       throw response;
     } catch (e) {
-      print("impl=============== $e");
+      log("impl=============== $e");
 
       throw CatchException.convertException(e);
     }
